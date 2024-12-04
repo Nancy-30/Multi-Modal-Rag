@@ -1,6 +1,9 @@
 import os
 from PyPDF2 import PdfReader
 from docx import Document
+import nltk
+
+nltk.download("punkt")
 
 
 def process_file(file):
@@ -9,7 +12,8 @@ def process_file(file):
     if file_type == "pdf":
         reader = PdfReader(file)
         text = " ".join([page.extract_text() for page in reader.pages])
-        return "pdf", text
+        chunks = nltk.tokenize.sent_tokenize(text)
+        return "pdf", chunks
 
     elif file_type == "docx":
         doc = Document(file)
