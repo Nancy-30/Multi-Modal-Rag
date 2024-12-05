@@ -15,5 +15,5 @@ if upload_file:
     query = st.text_input("Ask your query")
     if query:
         retrieved_data = retrieve_data(content, query)
-        response = generate_response(retrieved_data)
+        response = generate_response(retrieved_data, query)
         st.write("Response", response)
