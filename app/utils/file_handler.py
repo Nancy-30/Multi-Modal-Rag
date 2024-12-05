@@ -24,6 +24,7 @@ def process_file(file):
 
     elif file_type == "txt":
         text = file.read().decode("utf-8")
+        print("text : ", text)
         return "txt", text
 
     elif file_type in ["mp3", "wav"]:
