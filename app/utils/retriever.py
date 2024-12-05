@@ -13,7 +13,7 @@ class SemanticRetriever:
     def retrieve_data(self, 
                       chunks: List[str], 
                       query: str, 
-                      similarity_threshold: float = 0.2,
+                      similarity_threshold: float = 0.1,
                       top_k: int = 3) -> Union[str, List[str]]:
        
         if not chunks or not query:
